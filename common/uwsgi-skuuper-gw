@@ -1,0 +1,10 @@
+<uwsgi>
+    <socket>/tmp/flask.sock</socket>
+    <chmod-socket>666</chmod-socket>
+    <pythonpath>/w/fabadmin/current/</pythonpath>
+    <plugins>python27</plugins>
+    <virtualenv>/w/fabadmin/env/</virtualenv>
+    <module>app:app</module>
+    <daemonize>/w/fabadmin/.log/flask-uwsgi.log</daemonize>
+    <chdir>/w/fabadmin/current/</chdir>
+</uwsgi>

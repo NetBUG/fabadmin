@@ -1,0 +1,18 @@
+upstream flask_serv {
+    server unix:/tmp/flask.sock;
+}
+
+server {
+    error_log /w/skuuper/.log/flask.log;
+    listen 80;
+    server_name gw.skuuper.com;
+
+    location / {
+        uwsgi_pass flask_serv;
+        include uwsgi_params;
+    }
+
+    location /static/ {
+        root /w/skuuper/game-words;
+    }
+}

@@ -1,0 +1,13 @@
+flask
+flask_cors
+flask_login
+flask_mail
+flask_sqlalchemy
+flask_user
+pytz
+pyyaml
+requests
+python-geoip
+python-geoip-geolite2
+pip-tools
+virtualenv
