@@ -1,0 +1,68 @@
+# Configuration for RabbitMQ messaging
+messaging:
+  INBOX_EXCHANGE: com.skuuper.inbox
+  FRONTEND_QUEUE: com.skuuper.frontend
+  BACKEND_QUEUE: com.skuuper.backend # DEPRECATED: to delete
+  INCONVERTER_QUEUE: com.skuuper.inc-backend
+  OUTCONVERTER_QUEUE: com.skuuper.outc-backend
+  TMANAGER_QUEUE: com.skuuper.tmanager
+  COMMAND_CONVERT_REQUEST: com.skuuper.convert
+  COMMAND_CONVERT_RESPONSE: com.skuuper.convert-response
+  COMMAND_EXPORT_REQUEST: com.skuuper.export
+  COMMAND_EXPORT_RESPONSE: com.skuuper.export-response
+  COMMAND_STOP: stop
+  RABBITMQ_HOST: localhost
+  commands:
+    IMPORT_TM: com.skuuper.import_tm
+    DELETE_TM: com.skuuper.delete_tm
+    CONVERT: com.skuuper.convert
+    EXPORT: com.skuuper.export
+    STOP: com.skuuper.stop
+game-backend-production:
+  DATABASE_TYPE: postgresql
+#  DATABASE_HOST: localhost
+#  DATABASE_PORT: 5432
+#  DATABASE_USER: nobody
+#  DATABASE_PASSWORD: "nothing"
+  SESSION_DURATION: 600
+fabadmin:
+  DATABASE_TYPE: sqlite3
+  DATABASE_HOST: sqlite:///basic_app.sqlite
+  SESSION_DURATION: 600
+#  DATABASE_USER: nobody
+#  DATABASE_PORT: 0000
+#  DATABASE_PASSWORD: "nothing"
+tm-backend:
+  DATABASE_TYPE: sqlite3
+  DATABASE_HOST: sqlite:///tm_data.db
+  SESSION_DURATION: 600
+#  DATABASE_USER: nobody
+#  DATABASE_PORT: 0000
+#  DATABASE_PASSWORD: "nothing"
+converters:
+  SAMPLES_PATH: samples/src
+  html:
+    mime-type: text/html
+    stripped:
+      - span
+      - div
+      - p
+      - li
+      - u
+      - i
+      - b
+      - font
+      - pre
+      - a
+REDIS_HOST: "localhost"
+REDIS_PORT: 6379
+#  redis_url: redis://localhost:6379
+redis_url: unix:/var/run/redis/redis.sock  # how to use it in usual python scripts?:)
+BONUS_TIMEOUT: 20
+
+LEADERBOARD_USER_LIMIT: 1000
+LEADERBOARD_USERS_PER_PAGE: 5
+
+# Rail provider data
+APP_ID: 8844cf307ec322e40d7168a1150411940ede6d4625179edffaa340992d54f322
+APP_SERCRET: 6794acc8edf410f1457705a2888ddedab4d1b7824d027035092533b1155011ff
